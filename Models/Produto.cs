@@ -1,16 +1,16 @@
-﻿namespace api_dotnet.Models
+﻿
+namespace api_dotnet.Models
 {
     public class Produto
     {
-        public int Id { get;}
+
+        public int Id { get; private set; }
         public string Nome { get; set; }
 
-        public Produto(int id, string nome)
+        public Produto(int id)
         {
             Id = id;
-            Nome = nome;
         }
-
 
     }
 }

@@ -11,9 +11,11 @@ builder.Services.AddSwaggerGen();
 
 //Conexão MySQL - Appsettings.json
 var connectionStringMysql = builder.Configuration.GetConnectionString("ConnectionMysql");
-builder.Services.AddDbContext<APIDbContext>(x => x.UseMySql(
+builder.Services.AddDbContext<APIDbContext>(options => options.UseMySql(
     connectionStringMysql,
-    Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.30")));
+    ServerVersion.Parse("8.0.30")
+    )
+);
 
 var app = builder.Build();
 
